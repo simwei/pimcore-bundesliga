@@ -1,7 +1,13 @@
 services:
     redis:
         image: redis:alpine
-        command: [ redis-server, --maxmemory 128mb, --maxmemory-policy volatile-lru, --save "" ]
+        command:
+            [
+                redis-server,
+                --maxmemory 128mb,
+                --maxmemory-policy volatile-lru,
+                --save "",
+            ]
 
     rabbitmq:
         image: rabbitmq:alpine
@@ -11,7 +17,13 @@ services:
     db:
         image: mariadb:10.11
         working_dir: /application
-        command: [ mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_general_ci, --innodb-file-per-table=1 ]
+        command:
+            [
+                mysqld,
+                --character-set-server=utf8mb4,
+                --collation-server=utf8mb4_general_ci,
+                --innodb-file-per-table=1,
+            ]
         volumes:
             - pimcore-database:/var/lib/mysql
         environment:
@@ -23,7 +35,11 @@ services:
             # The service is considered healthy when:
             # - connection to pimcore db can be established, and
             # - we can run a simple SQL query.
-            test: [ "CMD-SHELL", "mysql -h db -u$$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE -e 'SHOW TABLES;'" ]
+            test:
+                [
+                    "CMD-SHELL",
+                    "mysql -h db -u$$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE -e 'SHOW TABLES;'",
+                ]
             interval: 10s
             retries: 6
             start_period: 1m
@@ -40,7 +56,7 @@ services:
             - php
 
     php:
-        #user: '1000:1000' # set to your uid:gid
+        user: "1000:1000" # set to your uid:gid
         image: pimcore/pimcore:php8.3-debug-latest
         environment:
             COMPOSER_HOME: /var/www/html
@@ -60,7 +76,7 @@ services:
             - ./.docker/messenger.yaml:/var/www/html/config/packages/messenger.yaml:ro
 
     supervisord:
-        #user: '1000:1000' # set to your uid:gid
+        user: "1000:1000" # set to your uid:gid
         image: pimcore/pimcore:php8.3-supervisord-latest
         depends_on:
             rabbitmq:
@@ -76,13 +92,13 @@ services:
     # We restrict these services to the test profile only, so we don't spin them up with every `docker compose up`.
     # See: https://docs.docker.com/compose/profiles/
     test-db:
-        profiles: [ 'test' ]
+        profiles: ["test"]
         extends: db
         volumes:
             - pimcore-test-database:/var/lib/mysql
 
     test-php:
-        profiles: [ 'test' ]
+        profiles: ["test"]
         extends: php
         environment:
             APP_ENV: test
