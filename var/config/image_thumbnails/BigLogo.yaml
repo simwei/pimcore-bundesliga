@@ -1,0 +1,27 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    BigLogo:
+                        items:
+                            -
+                                method: frame
+                                arguments:
+                                    width: 120
+                                    height: 120
+                                    forceResize: false
+                        medias: {  }
+                        name: BigLogo
+                        description: ''
+                        group: ''
+                        format: SOURCE
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1726073585
+                        creationDate: 1726073548
+                        preserveAnimation: false

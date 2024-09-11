@@ -1,0 +1,49 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+	Overview
+{% endblock %}
+
+{% block content %}
+	<div class="p-5 text-center bg-body-tertiary">
+
+		<h1>Bundesliga Teams</h1>
+		<h2>From Bavaria and BW</h2>
+
+		<hr/>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Logo</th>
+					<th scope="col">Team name</th>
+					<th scope="col">Number of Players</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for team in teams %}
+					<tr>
+						<td>
+							<img src={{team.logo.getThumbnail("SmallLogo")}}/>
+						</td>
+						<th scope="row">
+							<a href={{'team/' ~ team.key }}>
+								{{team.name}}
+							</a>
+						</th>
+						<td>
+							{{team.players|length}}
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		{% if editmode %}
+			{{ pimcore_relations("teams", {
+		"types": ["object"],
+		"classes": ["Team"]
+	}) }}
+		{% endif %}
+	</div>
+{% endblock %}

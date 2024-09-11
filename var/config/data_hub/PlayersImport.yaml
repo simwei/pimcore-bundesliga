@@ -8,7 +8,7 @@ pimcore_data_hub:
                 description: ''
                 group: ''
                 path: null
-                modificationDate: 1725873491
+                modificationDate: 1726064773
                 createDate: 1725788528
             loaderConfig:
                 type: push
@@ -87,8 +87,8 @@ pimcore_data_hub:
                         - '0'
                     settings:
                         loadStrategy: attribute
-                        attributeDataObjectClassId: ''
-                        attributeName: ''
+                        attributeDataObjectClassId: '1'
+                        attributeName: Shortname
                         attributeLanguage: ''
                     transformationResultType: dataObject
                     dataTarget:
@@ -102,8 +102,8 @@ pimcore_data_hub:
                         -
                             settings:
                                 loadStrategy: attribute
-                                attributeDataObjectClassId: ''
-                                attributeName: ''
+                                attributeDataObjectClassId: '1'
+                                attributeName: Shortname
                                 attributeLanguage: ''
                             type: loadDataObject
                 -

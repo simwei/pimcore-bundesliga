@@ -5,12 +5,14 @@
  * Variants: no
  *
  * Fields Summary:
+ * - Shortname [input]
  * - Name [input]
  * - Logo [image]
  * - Trainer [input]
  * - Coordinates [geopoint]
  * - FoundingYear [numeric]
  * - Players [reverseObjectRelation]
+ * - City [input]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -20,7 +22,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1725873553,
+   'modificationDate' => 1726070549,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -65,6 +67,36 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
         array (
           0 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'name' => 'Shortname',
+             'title' => 'Shortname',
+             'tooltip' => '',
+             'mandatory' => true,
+             'noteditable' => false,
+             'index' => true,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'defaultValue' => NULL,
+             'columnLength' => 190,
+             'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
+             'unique' => true,
+             'showCharCount' => false,
+             'width' => '',
+             'defaultValueGenerator' => '',
+          )),
+          1 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'name' => 'Name',
              'title' => 'Name',
              'tooltip' => '',
@@ -93,7 +125,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'width' => '',
              'defaultValueGenerator' => '',
           )),
-          1 => 
+          2 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
              'name' => 'Logo',
              'title' => 'Logo',
@@ -116,7 +148,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'width' => '',
              'height' => '',
           )),
-          2 => 
+          3 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'name' => 'Trainer',
              'title' => 'Trainer',
@@ -146,7 +178,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'width' => '',
              'defaultValueGenerator' => '',
           )),
-          3 => 
+          4 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Geopoint::__set_state(array(
              'name' => 'Coordinates',
              'title' => 'Coordinates',
@@ -172,7 +204,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'height' => 180,
              'width' => '',
           )),
-          4 => 
+          5 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
              'name' => 'FoundingYear',
              'title' => 'FoundingYear',
@@ -202,7 +234,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'width' => '',
              'defaultValueGenerator' => '',
           )),
-          5 => 
+          6 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\ReverseObjectRelation::__set_state(array(
              'name' => 'Players',
              'title' => 'Players',
@@ -241,6 +273,36 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'ownerClassId' => '2',
              'ownerFieldName' => 'Team',
              'lazyLoading' => true,
+          )),
+          7 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+             'name' => 'City',
+             'title' => 'City',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'defaultValue' => NULL,
+             'columnLength' => 190,
+             'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
+             'unique' => false,
+             'showCharCount' => false,
+             'width' => '',
+             'defaultValueGenerator' => '',
           )),
         ),
          'locked' => false,

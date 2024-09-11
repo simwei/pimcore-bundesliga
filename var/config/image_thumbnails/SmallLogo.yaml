@@ -1,0 +1,27 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    SmallLogo:
+                        items:
+                            -
+                                method: frame
+                                arguments:
+                                    width: 50
+                                    height: 50
+                                    forceResize: false
+                        medias: {  }
+                        name: SmallLogo
+                        description: ''
+                        group: ''
+                        format: SOURCE
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1726059700
+                        creationDate: 1726059481
+                        preserveAnimation: false
