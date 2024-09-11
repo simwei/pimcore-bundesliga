@@ -1,0 +1,26 @@
+pimcore:
+    objects:
+        select_options:
+            definitions:
+                Positions:
+                    id: Positions
+                    group: ''
+                    useTraits: ''
+                    implementsInterfaces: ''
+                    selectOptions:
+                        -
+                            value: GK
+                            label: Goalkeeper
+                            name: ''
+                        -
+                            value: DF
+                            label: Defense
+                            name: ''
+                        -
+                            value: MF
+                            label: Midfield
+                            name: ''
+                        -
+                            value: FW
+                            label: Forward
+                            name: ''

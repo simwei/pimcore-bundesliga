@@ -1,0 +1,143 @@
+pimcore_data_hub:
+    configurations:
+        PlayersImport:
+            general:
+                active: true
+                type: dataImporterDataObject
+                name: PlayersImport
+                description: ''
+                group: ''
+                path: null
+                modificationDate: 1725873491
+                createDate: 1725788528
+            loaderConfig:
+                type: push
+                settings:
+                    apiKey: 7003910d30445c3d27e0e7419c485d4d
+            interpreterConfig:
+                type: xlsx
+                settings:
+                    skipFirstRow: true
+                    sheetName: Players
+            resolverConfig:
+                elementType: dataObject
+                dataObjectClassId: '2'
+                loadingStrategy:
+                    type: notLoad
+                createLocationStrategy:
+                    type: staticPath
+                    settings:
+                        path: /Players/
+                locationUpdateStrategy:
+                    type: noChange
+                publishingStrategy:
+                    type: noChangePublishNew
+            processingConfig:
+                executionType: parallel
+                idDataIndex: ''
+            mappingConfig:
+                -
+                    label: Name
+                    dataSourceIndex:
+                        - '4'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: Name
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: Position
+                    dataSourceIndex:
+                        - '1'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: Position
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+                -
+                    label: Birthdate
+                    dataSourceIndex:
+                        - '5'
+                    settings:
+                        format: d.m.Y
+                    transformationResultType: date
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: Birthdate
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline:
+                        -
+                            settings:
+                                format: d.m.Y
+                            type: date
+                -
+                    label: Team
+                    dataSourceIndex:
+                        - '0'
+                    settings:
+                        loadStrategy: attribute
+                        attributeDataObjectClassId: ''
+                        attributeName: ''
+                        attributeLanguage: ''
+                    transformationResultType: dataObject
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: Team
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline:
+                        -
+                            settings:
+                                loadStrategy: attribute
+                                attributeDataObjectClassId: ''
+                                attributeName: ''
+                                attributeLanguage: ''
+                            type: loadDataObject
+                -
+                    label: Number
+                    dataSourceIndex:
+                        - '2'
+                    transformationResultType: numeric
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: Number
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline:
+                        -
+                            type: numeric
+                -
+                    label: Key
+                    dataSourceIndex:
+                        - '4'
+                    transformationResultType: default
+                    dataTarget:
+                        type: direct
+                        settings:
+                            fieldName: key
+                            language: ''
+                            writeIfTargetIsNotEmpty: true
+                            writeIfSourceIsEmpty: true
+                    transformationPipeline: {  }
+            executionConfig:
+                scheduleType: recurring
+                scheduledAt: ''
+            permissions:
+                user: {  }
+                role: {  }
+            workspaces: {  }
