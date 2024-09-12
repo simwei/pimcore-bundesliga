@@ -21,7 +21,6 @@ Built with:
     docker compose up -d
     docker compose exec php composer install
     docker compose exec php vendor/bin/pimcore-install --mysql-host-socket=db --mysql-database=pimcore
-    docker compose exec php bin/console pimcore:bundle:install PimcoreStaticRoutesBundle
     docker compose exec php bin/console pimcore:bundle:install PimcoreDataHubBundle
     docker compose exec php bin/console pimcore:bundle:install PimcoreDataImporterBundle
     ```
