@@ -7,7 +7,7 @@
 {% block content %}
 	<div class="p-5 text-center bg-body-tertiary">
 
-		<h1 class="text-center">{{team.name}}</h1>
+		<h1>{{team.name}}</h1>
 
 		<hr/>
 
@@ -29,6 +29,7 @@
 						{{ team.trainer }}
 					</div>
 				</div>
+
 				<div class="col">
 					<div class="p-3 d-flex justify-content-center align-items-center h-100">
 						<div>
@@ -37,7 +38,6 @@
 							<a href={{ "https://www.google.com/maps?z=12&ll=" ~ team.coordinates.latitude ~ "," ~ team.coordinates.longitude}}>
 								{{ team.city }}
 							</a>
-
 						</div>
 					</div>
 				</div>
@@ -47,7 +47,6 @@
 						<img src={{team.logo.getThumbnail("BigLogo")}}/>
 					</div>
 				</div>
-
 			</div>
 		</div>
 
